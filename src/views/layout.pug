@@ -4,9 +4,22 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", type="text/css", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", type="text/css", href="/css/style.css")
         title #{title}
-    body 
-        div(class="content-container")
+    body
+        nav#navbarText.navbar.navbar-expand-lg.navbar-dark.bg-dark
+            div.container-fluid.collapse.navbar-collapse
+                div.navbar-header
+                    h3.navbar-brand Sudoku Solver
+                ul.nav.navbar-nav.navbar-right
+                    li.nav-item
+                        a.nav-link(class="nav-link", href="#") Solve
+                    li.nav-item
+                        a.nav-link(class="nav-link", href="#") About
+        div.container-fluid.text-center
             block content
-        div(class="footer-container")
-            p footer
+        footer.container-fluid.text-center.bg-dark
+            p.text-muted This is a nice footer with #[a(class="text-white", href="#") some] social #[a(class="text-white", href="#") links!]
+                
+                
