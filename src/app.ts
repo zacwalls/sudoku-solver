@@ -2,9 +2,9 @@ import * as dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import routes from './routes';
 import path from "path";
-import * as pug from 'pug';
+
+import routes from 'routes';
 
 dotenv.config();
 
