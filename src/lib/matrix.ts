@@ -34,6 +34,38 @@ class Matrix {
           }));
       });
     }
+    
+    isValid(row: number, col: number, num: number): boolean {
+        // if num is in row, return false
+        for (let i = 0; i < this.rows; i++) {
+            if (this.matrix[col][i] == num) {
+                return false;
+            }
+        }
+        
+        // if num is in col, return false,
+        for (let i = 0; i < this.cols; i++) {
+            if (this.matrix[i][row] == num) {
+                return false;
+            }
+        }
+        
+        // this is where we calculate the 3x3 grid 
+        const col0 = (Math.floor(col / 3)) * 3
+        const row0 = (Math.floor(row / 3)) * 3
+
+        // if num is in the 3x3 grid, return false
+        for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 4; j++) {
+                if (this.matrix[row0+i][col0+j] == num) {
+                    return false;
+                }
+            }
+        }
+
+        // else, return true
+        return true;
+    }
 }
 
 export { Matrix }
